@@ -62,7 +62,7 @@ const createLiveGhostNodes = ({actions}, configOptions) => {
     const api = ContentAPI.configure(configOptions);
 
     const postAndPageFetchOptions = {
-        limit: 'all',
+        limit: 500,
         include: 'tags,authors',
         formats: 'html,plaintext'
     };
@@ -156,6 +156,6 @@ exports.sourceNodes = ({emitter, actions}, configOptions) => {
 };
 
 // Secondary point in build where we have to create fake Nodes
-exports.onPreExtractQueries = ({emitter, actions}) => {
-    createTemporaryFakeNodes({emitter, actions});
-};
+// exports.onPreExtractQueries = ({emitter, actions}) => {
+//     createTemporaryFakeNodes({emitter, actions});
+// };
